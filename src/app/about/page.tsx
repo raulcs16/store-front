@@ -1,4 +1,3 @@
-import { AlertCircleIcon, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 
 const industries = [
@@ -40,7 +39,7 @@ const industries = [
   },
 ];
 
-export default function Home() {
+export default function About() {
   return (
     <main className=" min-h-screen w-full bg-background text-foreground">
       <section className="mt-8 px-16">
@@ -49,7 +48,7 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {industries.map((indust) => (
-            <div className="relative w-80 h-60 rounded-lg overflow-hidden">
+            <div className="relative w-full aspect-[4/3]  rounded-lg overflow-hidden">
               <Image
                 src={indust.src}
                 alt={indust.name}

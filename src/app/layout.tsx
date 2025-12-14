@@ -30,28 +30,36 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className="flex w-full justify-between items-baseline-last px-8 pt-2">
-          <div className="flex items-center-safe">
-            <Image
-              src="/icon.png"
-              alt="AMM logo"
-              width={80}
-              height={10}
-              priority
-              className="object-contain"
-            />
-            <div className="flex items-center justify-center pointer-events-none ml-2">
-              <div className="w-44 font-mono uppercase tracking-widest leading-none">
-                <p className="text-sm font-bold">Applied Motion Products</p>
-                <span className="text-xs mr-0.5 tracking-wider">A</span>
-                <span className="text-xs mr-0.5 font-extrabold text-accent">
-                  Moons'
-                </span>
-                <span className="text-xs tracking-wider">Company</span>
+          <Link href={"/"}>
+            <div className="flex items-center-safe">
+              <Image
+                src="/icon.png"
+                alt="AMM logo"
+                width={80}
+                height={10}
+                priority
+                className="object-contain"
+              />
+              <div className="flex items-center justify-center pointer-events-none ml-2">
+                <div className="w-44 font-mono uppercase tracking-widest leading-none">
+                  <p className="text-sm font-bold">Applied Motion Products</p>
+                  <span className="text-xs mr-0.5 tracking-wider">A</span>
+                  <span className="text-xs mr-0.5 font-extrabold text-accent">
+                    Moons'
+                  </span>
+                  <span className="text-xs tracking-wider">Company</span>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
           <div className="flex items-center gap-3">
-            <Link href={"/"}>Store</Link>|<Link href={"about"}>About</Link>
+            <Link href={"/"} className="hover:text-accent">
+              Store
+            </Link>
+            |
+            <Link href={"about"} className="hover:text-accent">
+              About
+            </Link>
             <button className="border border-foreground bg-background px-3 py-2 text-xs font-mono uppercase tracking-wide shadow-sm shadow-accent">
               Log In
             </button>
