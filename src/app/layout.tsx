@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ShoppingCart } from "lucide-react";
+import { Copyright, MapPin, Phone, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 const geistSans = Geist({
@@ -38,10 +38,10 @@ export default function RootLayout({
                 width={80}
                 height={10}
                 priority
-                className="object-contain"
+                className=" object-contain"
               />
-              <div className="flex items-center justify-center pointer-events-none ml-2">
-                <div className="w-44 font-mono uppercase tracking-widest leading-none">
+              <div className="hidden sm:flex items-center justify-center pointer-events-none ml-2">
+                <div className="font-mono uppercase tracking-widest leading-none">
                   <p className="text-sm font-bold">Applied Motion Products</p>
                   <span className="text-xs mr-0.5 tracking-wider">A</span>
                   <span className="text-xs mr-0.5 font-extrabold text-accent">
@@ -53,14 +53,15 @@ export default function RootLayout({
             </div>
           </Link>
           <div className="flex items-center gap-3">
-            <Link href={"/"} className="hover:text-accent">
+            <Link href={"/"} className="hover:text-accent text-xs">
               Store
             </Link>
             |
-            <Link href={"about"} className="hover:text-accent">
+            <Link href={"about"} className="hover:text-accent text-xs">
               About
             </Link>
-            <button className="border border-foreground bg-background px-3 py-2 text-xs font-mono uppercase tracking-wide shadow-sm shadow-accent">
+            <span className="sm:hidden">|</span>
+            <button className="sm:px-3 sm:py-2 text-xs font-mono uppercase sm:tracking-wide sm:shadow-sm shadow-accent">
               Log In
             </button>
             <ShoppingCart
@@ -70,6 +71,68 @@ export default function RootLayout({
           </div>
         </header>
         {children}
+        <footer className="p-8 bg-accent text-gray-300 text-xs">
+          <div className="w-full flex flex-wrap justify-between gap-8 mb-4">
+            <section className="">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-gray-300 mt-0.5" />
+                <address className="not-italic leading-relaxed space-y-1">
+                  <p className="text-gray-100 font-medium">
+                    Applied Motion Products Inc.
+                  </p>
+                  <p>18645 Mardrone Parkway</p>
+                  <p>Marogan Hill, CA 95037</p>
+                  <p>United States</p>
+                </address>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-baseline gap-3">
+                <Phone className="w-5 h-5 text-gray-300" />
+                <a
+                  href="tel:18005251609"
+                  className="hover:text-white transition text-gray-100"
+                >
+                  1-800-525-1609
+                </a>
+              </div>
+            </section>
+            <section>
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-gray-100 mb-2">
+                Company
+              </h2>
+              <ul className="space-y-1 ml-1">
+                <li className="hover:text-white transition">About</li>
+                <li className="hover:text-white transition">Careers</li>
+                <li className="hover:text-white transition">News & Events</li>
+                <li className="hover:text-white transition">
+                  Terms & Conditions
+                </li>
+                <li className="hover:text-white transition">Privacy Policy</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-gray-100 mb-2">
+                Resources
+              </h2>
+              <ul className="space-y-1 ml-1">
+                <li className="hover:text-white transition">
+                  Application Notes
+                </li>
+                <li className="hover:text-white transition">Certifications</li>
+                <li className="hover:text-white transition">
+                  Software Downloads
+                </li>
+                <li className="hover:text-white transition">Manuals</li>
+              </ul>
+            </section>
+          </div>
+          <p className="text-center">
+            © {new Date().getFullYear()} Applied Motion Products, Inc. All
+            rights reserved.
+          </p>
+        </footer>
       </body>
     </html>
   );
