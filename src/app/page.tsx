@@ -41,7 +41,7 @@ const categories = [
 export default function Home() {
   return (
     <main className=" min-h-screen w-full bg-background text-foreground">
-      <section className="mt-4 flex items-start gap-4 border-l-4 border-accent bg-secondary/60 px-6 py-4 font-mono text-sm leading-snug">
+      {/* <section className="mt-4 flex items-start gap-4 border-l-4 border-accent bg-secondary/60 px-6 py-4 font-mono text-sm leading-snug">
         <AlertCircleIcon size={32} className="shrink-0 text-accent" />
 
         <div className="text-foreground px-2">
@@ -93,7 +93,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
